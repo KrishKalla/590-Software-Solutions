@@ -22,7 +22,7 @@ def isValid(board, c):
     return board[rowCount - 1][c] == empty
 
 def getOpenRow(board, c):
-    for r in range(rowCount):
+    for r in (range(rowCount)):
         if board[r][c] == empty:
             return r
 
@@ -52,4 +52,11 @@ def winningMove(board, piece):
         for r in range(3, rowCount):
             if board[r][c] == piece and board[r-1][c+1] == piece and board[r-2][c+2] == piece and board[r-3][c+3] == piece:
                 return True
-            
+def tie(board):
+    for c in range(columnCount):
+        for r in range(rowCount):
+            if board[r][c] == empty:
+                return False
+    return True
+
+
