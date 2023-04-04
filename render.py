@@ -47,7 +47,7 @@ window = pg.display.set_mode(windowSize)
 renderBoard(BOARD)
 pg.display.update()
 
-font = pg.font.SysFont('monospace', 120)
+font = pg.font.SysFont('monospace', 90)
 
 space = False
 
@@ -66,6 +66,8 @@ while not isOver:
                 space = True
                 mouseListener.start()
                 pg.draw.rect(window, BLACK, (0,0,width, height))
+                text = font.render("Pause Game...", 1, GRAY)
+                window.blit(text, (50, height/2))
             elif (event.key == pg.K_SPACE and space == True):
                     print("Resume")
                     space = False
