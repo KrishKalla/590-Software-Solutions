@@ -8,8 +8,14 @@ empty = 0
 p1 = 1
 p2 = 2
 
+score1 = 0
+score2 = 0
+
 rowCount = 6
 columnCount = 7
+
+history = []
+results = []
 
 def createBoard():
     board = np.zeros((rowCount, columnCount))
@@ -58,5 +64,13 @@ def tie(board):
             if board[r][c] == empty:
                 return False
     return True
+
+def addToHistory(board, result):
+    history.append(board)
+    results.append(result)
+
+def clearBoard(board):
+    board = np.zeros((rowCount, columnCount))
+    return board
 
 
